@@ -78,7 +78,7 @@ Add annotation above class.
 ```
 @SpringBootTest(webEnvironment = WebEnvironment.NONE)
 @AutoConfigureStubRunner(ids = {
-        "com.axxes.producer:*:stubs" }, stubsMode = StubRunnerProperties.StubsMode.LOCAL)
+        "com.axxes:producer:+:stubs:8095" }, stubsMode = StubRunnerProperties.StubsMode.LOCAL)
 ```
 
 Add with mvcMock call to mock of produced contract.
