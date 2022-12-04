@@ -1,6 +1,6 @@
 # Writing a consumer contract
 
-The customer asks for a api call to `/meal-vouchers`.
+The customer asks for a api call to `/meal-vouchers/{id}`.
 
 He wants the producer  balance of your meal-vouchers.
 
@@ -44,7 +44,9 @@ Steps to create:
 </build>
 ```
 
-1. Adding contract testing to `pom.xml` `consumer`.
+✅ `mvn clean install` in `consumer` works.
+
+2. Adding contract testing to `pom.xml` `consumer`.
 
 ```
 <dependencies>
@@ -58,5 +60,27 @@ Steps to create:
 </dependencies>
 ```
 
-1. Create contract in producer. (FOR NOW)
-2. Create test in consumer.
+✅ `mvn clean install` in `consumer` works.
+
+3. Create contract in producer.
+
+Write contract in `producer/test/resources/contracts/xxx.groovy`.
+
+✅ `mvn clean install` works and in target a stubs jar has been created.
+--OPTIONAL: check in .m2 if stubs jar has been created.
+
+4. Create test in consumer.
+
+Add a java class under test.
+
+Add annotation above class.
+
+```
+@SpringBootTest(webEnvironment = WebEnvironment.NONE)
+@AutoConfigureStubRunner(ids = {
+        "com.axxes.producer:*:stubs" }, stubsMode = StubRunnerProperties.StubsMode.LOCAL)
+```
+
+Add with mvcMock call to mock of produced contract.
+
+✅ Run test. If successful to [oef_2](./oef_2.md).
