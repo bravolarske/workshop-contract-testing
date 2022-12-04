@@ -1,6 +1,6 @@
 # Writing a consumer contract
 
-The customer asks for a api call to `/meal-vouchers/{id}`.
+The customer asks for a api call to `/api/meal-vouchers/{id}`.
 
 He wants the producer  balance of your meal-vouchers.
 
