@@ -64,7 +64,7 @@ Steps to create:
 
 3. Create contract in producer.
 
-Write contract in `producer/test/resources/contracts/xxx.groovy`.
+Write contract in `producer/test/resources/contracts/xxx.groovy` for the mealvoucher class.
 
 ✅ `mvn clean install` works and in target a stubs jar has been created.
 --OPTIONAL: check in .m2 if stubs jar has been created.
@@ -82,5 +82,6 @@ Add annotation above class.
 ```
 
 Add with mvcMock call to mock of produced contract.
+Url : localhost:8095
 
 ✅ Run test. If successful to [oef_2](./oef_2.md).
