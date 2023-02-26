@@ -1,4 +1,4 @@
-# Writing a consumer contract
+# Setup
 
 The customer asks for a api call to `/api/meal-vouchers/{id}`.
 
@@ -62,13 +62,16 @@ Steps to create:
 
 ✅ `mvn clean install` in `consumer` works.
 
+# Producer-Side
 3. Create contract in producer.
+You can find an example contract in [this file](./find_hat_by_id.groovy). This is a contract for the HAT api, which has an id, name, size and color.
 
-Write contract in `producer/test/resources/contracts/xxx.groovy`.
+Write contract in `producer/test/resources/contracts/xxx.groovy` for the mealvoucher class.
 
 ✅ `mvn clean install` works and in target a stubs jar has been created.
 --OPTIONAL: check in .m2 if stubs jar has been created.
 
+# Consumer-Side
 4. Create test in consumer.
 
 Add a java class under test.
@@ -78,9 +81,10 @@ Add annotation above class.
 ```
 @SpringBootTest(webEnvironment = WebEnvironment.NONE)
 @AutoConfigureStubRunner(ids = {
-        "com.axxes.producer:*:stubs" }, stubsMode = StubRunnerProperties.StubsMode.LOCAL)
+        "com.axxes:producer:+:stubs:8095" }, stubsMode = StubRunnerProperties.StubsMode.LOCAL)
 ```
 
-Add with mvcMock call to mock of produced contract.
+Add with mvcMock call to mock of produced contract. 
+Url : localhost:8095
 
 ✅ Run test. If successful to [oef_2](./oef_2.md).
