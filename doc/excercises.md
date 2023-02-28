@@ -23,6 +23,7 @@ Steps to create:
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-contract-verifier</artifactId>
         <scope>test</scope>
+        <version>3.1.4</version>
     </dependency>
     ...
 </dependencies>
