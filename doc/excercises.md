@@ -45,7 +45,7 @@ Steps to create:
 </build>
 ```
 
-✅ `mvn clean install` in `consumer` works.
+✅ `mvn clean install` in `producer` works.
 
 2. Adding contract testing to `pom.xml` `consumer`.
 
@@ -109,21 +109,26 @@ Url : localhost:8095
 
 # Make generated test on producer side work
 
-❌ run test should fail in producer.
+❌ `mvn clean install` should fail in producer.
 
-test is found under `/producer/generated-test-sources`
+Test is found under `/producer/generated-test-sources`
 
-Create the endpoint with the expected value in the contract.
+Create the meal voucher class/record. 
+It should have an amount and an endDate. 
+
+Create a REST controller with the endpoint /api/meal-vouchers/{id} that will return a fixed meal voucher object on a get call.
 
 ✅ Run test, it should now work.
 
 
-# Change soo it works with a mock repository
+# Make the test more robust by using a mock
 
-Change value in repository.
+Change a value in your meal voucher and run tests again.
 
 ❌ run test should fail in producer.
 
-change BaseTestClass too mock Repository.
+Try to solve this by using a mock repository that will return a fixed correct value.
+
+(Hint : you need to configure something in the baseTestClass for this mocking)
 
 ✅ Run test, it should now work.
