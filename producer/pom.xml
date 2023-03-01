@@ -47,12 +47,27 @@
 			<type>pom</type>
 			<scope>import</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
+			<scope>test</scope>
+			<version>3.1.4</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
+				<version>3.1.4</version>
+				<extensions>true</extensions>
+				<configuration>
+					<baseClassForTests>com.axxes.producer.BaseTestClass</baseClassForTests>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
