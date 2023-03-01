@@ -99,8 +99,8 @@ Add annotation above class.
 com.axxes:producer -> package of maven pom.
 ```
 
-
-Add with mvcMock call to mock of produced contract. 
+Create a record of the meal voucher class.
+Use a test Rest template to perform a get call to your url.
 
 Url : localhost:8095
 
